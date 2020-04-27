@@ -1,6 +1,6 @@
 const express = require("express");
 const genericHandlers = require("./handlers/genericHandlers.js");
-// const userHandlers = require("./handlers/userHandlers.js");
+const userHandlers = require("./handlers/userHandlers.js");
 
 
 require("dotenv").config();
@@ -10,6 +10,9 @@ const server = express();
 
 // Routes
 server.get("/", genericHandlers.homeHandler)
+server.get("/log-in", userHandlers.loginHandler)
+server.get("/sign-up", userHandlers.signUpHandler)
+
 
 
 
