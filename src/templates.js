@@ -44,7 +44,17 @@ function login() {
     `;
 
     const loginMainContent = /*html*/ `
-    <h3>Login Main Section</h3>
+    <h3>Login Form</h3>
+    <form class="login-form" action="submit" method="POST">
+
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
+
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" placeholder="password123" required> 
+
+      <button class="submit-btn" type="submit">Login now!</button>
+    </form>
     `;
 
     return sharedLayout(loginHeaderContent, loginNavContent, loginMainContent);
@@ -60,7 +70,20 @@ function signUp() {
     `;
 
     const signUpMainContent = /*html*/ `
-    <h3>SignUp Main Section</h3>
+    <h3>SignUp Form</h3>
+    <form class="signup-form" action="submit" method="POST">
+
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" placeholder="Username123" required>
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
+
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" placeholder="password123" required> 
+
+    <button class="submit-btn" type="submit">Login now!</button>
+  </form>
     `;
 
     return sharedLayout(signUpHeaderContent, signUpNavContent, signUpMainContent);
