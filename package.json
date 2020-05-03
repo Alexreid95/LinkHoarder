@@ -5,20 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js",
     "setupdb": "node src/db/build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alexreid95/To-be-named.git"
+    "url": "git+https://github.com/Alexreid95/LinkHoarder.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Alexreid95/To-be-named/issues"
+    "url": "https://github.com/Alexreid95/LinkHoarder/issues"
   },
-  "homepage": "https://github.com/Alexreid95/To-be-named#readme",
+  "homepage": "https://github.com/Alexreid95/LinkHoarder#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "nodemon": "^2.0.3"
