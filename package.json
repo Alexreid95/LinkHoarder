@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "setupdb": "node src/db/build.js"
+    "setupdb": "node src/db/build.js",
+    "eslint": "./node_modules/.bin/eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,17 @@
   "homepage": "https://github.com/Alexreid95/LinkHoarder#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
+    "husky": "^4.2.5",
     "nodemon": "^2.0.3"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint"
+    }
   }
 }
