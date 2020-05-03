@@ -11,6 +11,10 @@ function getSignUpHandler(req, res) {
     res.send(signUpHtml);
 }
 
+function getLogoutHandler(req, res) {
+    res.clearCookie("token");
+    res.redirect("/");
+}
 // function postLoginHandler(req, res) {
 
 // }
@@ -21,7 +25,8 @@ function getSignUpHandler(req, res) {
 
 module.exports = {
     getLoginHandler,
-    getSignUpHandler
+    getSignUpHandler,
+    getLogoutHandler
     // postLoginHandler,
     // postSignUpHandler
 }

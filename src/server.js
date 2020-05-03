@@ -16,15 +16,17 @@ server.use(cookieParser());
 
 // Routes
 // ------- Generic handlers -------
-server.get("/", genericHandlers.homeHandler)
+server.get("/", genericHandlers.homeHandler);
 
 // ------- User handlers -------
 // Renders templates html which contains a form
-server.get("/log-in", userHandlers.getLoginHandler)
-server.get("/sign-up", userHandlers.getSignUpHandler)
+server.get("/log-in", userHandlers.getLoginHandler);
+server.get("/sign-up", userHandlers.getSignUpHandler);
+server.get("/log-out", userHandlers.getLogoutHandler);
+
 // Parses the request body to receive the user's submitted info
-server.post("/log-in", userHandlers.postLoginHandler)
-server.post("/sign-up", userHandlers.postSignUpHandler)
+server.post("/log-in", userHandlers.postLoginHandler);
+server.post("/sign-up", userHandlers.postSignUpHandler);
 
 
 
