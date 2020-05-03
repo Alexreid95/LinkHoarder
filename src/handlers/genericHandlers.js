@@ -1,7 +1,8 @@
 const templates = require("../templates");
 
 function homeHandler(req, res) {
-    const homeHtml = templates.home();
+    const userName = req.cookies.userName;
+    const homeHtml = templates.home(userName);
     res.send(homeHtml);
 }
 
