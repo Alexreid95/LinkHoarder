@@ -11,6 +11,7 @@ const server = express();
 // Enabled for all routes
 server.use(express.urlencoded());
 server.use(cookieParser());
+server.use(express.static("./public"));
 
 
 
