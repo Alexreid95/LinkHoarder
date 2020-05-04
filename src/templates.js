@@ -5,7 +5,7 @@ function sharedLayout(headerContent, navContent, mainContent) {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>To-be-named</title>
+            <title>Link Hoarder</title>
         </head>
         <body>
             <header>${headerContent}</header>
@@ -17,21 +17,43 @@ function sharedLayout(headerContent, navContent, mainContent) {
     `;
 }
 
-function home() {
-    const homeHeaderContent = /*html*/ `
+function home(username) {
+    // When logged out show:
+    const homeHeaderContentOut = /*html*/ `
     <h1>HOME</h1>
     `;
 
-    const homeNavContent = /*html*/ `
+    const homeNavContentOut = /*html*/ `
     <a href="/log-in" class="nav_links" aria-label="log-in">Login</a>
     <a href="/sign-up" class="nav_links" aria-label="sign-up">SignUp</a>
     `;
 
-    const homeMainContent = /*html*/ `
-    <h3>Home Main Section</h3>
+    const homeMainContentOut = /*html*/ `
+    <h3>Home, logged out main Section</h3>
     `;
 
-    return sharedLayout(homeHeaderContent, homeNavContent, homeMainContent);
+    // When logged in show:
+    const homeHeaderContentIn = /*html*/ `
+    <h1>Welcome back ${username}</h1>
+    `;
+
+    const homeNavContentIn = /*html*/ `
+    <a href="/log-out" class="nav_links" aria-label="log-out">Logout</a>
+    `;
+
+    const homeMainContentIn = /*html*/ `
+    <h3>Home, logged in Main Section</h3>
+    `;
+
+    if (username) {
+        // logged in 
+        return sharedLayout(homeHeaderContentIn, homeNavContentIn, homeMainContentIn);
+
+    } else {
+        //logged out 
+        return sharedLayout(homeHeaderContentOut, homeNavContentOut, homeMainContentOut);
+    }
+
 }
 
 function login() {
@@ -45,15 +67,14 @@ function login() {
 
     const loginMainContent = /*html*/ `
     <h3>Login Form</h3>
-    <form class="login-form" action="submit" method="POST">
+    <form class="login-form" action="/log-in" method="POST">
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
 
-      <label for="email">Email: </label>
-      <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" placeholder="password123" required> 
 
-      <label for="password">Password: </label>
-      <input type="password" id="password" name="password" placeholder="password123" required> 
-
-      <button class="submit-btn" type="submit">Login now!</button>
+        <button class="submit-btn" type="submit">Login now!</button>
     </form>
     `;
 
@@ -71,18 +92,18 @@ function signUp() {
 
     const signUpMainContent = /*html*/ `
     <h3>SignUp Form</h3>
-    <form class="signup-form" action="submit" method="POST">
+        <form class="signup-form" action="/sign-up" method="POST">
 
-    <label for="username">Username: </label>
-    <input type="text" id="username" name="username" placeholder="Username123" required>
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username" placeholder="Username123" required>
 
-    <label for="email">Email: </label>
-    <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
 
-    <label for="password">Password: </label>
-    <input type="password" id="password" name="password" placeholder="password123" required> 
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" placeholder="password123" required> 
 
-    <button class="submit-btn" type="submit">Login now!</button>
+        <button class="submit-btn" type="submit">Signup Now!</button>
   </form>
     `;
 
