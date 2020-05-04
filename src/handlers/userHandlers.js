@@ -72,11 +72,11 @@ function postLoginHandler(req, res, next) {
 
 function postSignUpHandler(req, res, next) {
     if (
-        req.body.email === undefined ||
         req.body.username === undefined ||
+        req.body.email === undefined ||
         req.body.password === undefined
     ) {
-        const errorMessage = new Error("Missing parameter: email, username, password are REQUIRED");
+        const errorMessage = new Error("Missing parameter: username, email, password are REQUIRED");
         errorMessage.status = 400;
         next(errorMessage);
     }
