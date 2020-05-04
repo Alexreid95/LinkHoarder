@@ -32,9 +32,12 @@ server.post("/sign-up", userHandlers.postSignUpHandler);
 
 
 
+// npm test => When PGDATABASE=localtest, we are testing, server does not need to be running
+if (process.env.PGDATABASE !== "localtest") {
+    // We start the server listening on a specific port
+    server.listen(PORT, () =>
+        console.log(`Server listening on http:localhost:${PORT}`)
+    );
+}
 
-
-// We start the server listening on a specific port
-server.listen(PORT, () =>
-    console.log(`Server listening on http:localhost:${PORT}`)
-);
+module.exports = server;
