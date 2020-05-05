@@ -20,7 +20,7 @@ test("Test / get route", t => {
                 .expect("content-type", "text/html; charset=utf-8")
                 .end((err, res) => {
                     t.error(err, "Status is 200 and content-type is text/html; charset=utf-8");
-                    t.equals(res.text.includes("<h1>HOME</h1>"), true, "<h1>HOME</h1> should be present");
+                    t.equals(res.text.includes("<h1>Link Hoarder</h1>"), true, "<h1>HOME</h1> should be present");
                     t.end();
                 });
         })
@@ -35,7 +35,7 @@ test("Test /sign-up get route", t => {
                 .expect("content-type", "text/html; charset=utf-8")
                 .end((err, res) => {
                     t.error(err, "Status is 200 and content-type is text/html; charset=utf-8");
-                    t.equals(res.text.includes('class="signup-form"'), true, "Signup form should be present");
+                    t.equals(res.text.includes('class="form signup-form"'), true, "Signup form should be present");
                     t.end();
                 });
         })
@@ -50,7 +50,7 @@ test("Test /log-in get route", t => {
                 .expect("content-type", "text/html; charset=utf-8")
                 .end((err, res) => {
                     t.error(err, "Status is 200 and content-type is text/html; charset=utf-8");
-                    t.equals(res.text.includes('class="login-form"'), true, "Login form should be present");
+                    t.equals(res.text.includes('class="form login-form"'), true, "Login form should be present");
                     t.end();
                 });
         })
