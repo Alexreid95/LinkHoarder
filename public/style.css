@@ -32,20 +32,45 @@ main {
   border-radius: 1em;
 }
 
+.nav_links_a:hover {
+  box-shadow: inset 0px 0px 4px 0px rgba(176, 176, 176, 1);
+}
+
 /* ------------------------- form styling --------------------------- */
 
-/* .form-wrap {
+fieldset {
+  padding: 2em 5em;
+  display: flex;
+  flex-direction: column;
+  border-color: rgb(231, 235, 235);
+  border-radius: 2em;
 }
 
 .form legend {
-} */
+  margin: 1em;
+  padding: 1em;
+  color: gray;
+}
+
+.form label {
+  color: grey;
+}
 
 .form input {
+  margin: 1em;
   padding: 0.4em 1em;
   border-style: none;
   border-radius: 1em;
   background-color: rgb(231, 235, 235);
 }
 
-/* .form .submit-btn {
-} */
+.form .submit-btn {
+  margin: 2em;
+  padding: 0.4em 1em;
+  border-radius: 2em;
+  border: rgba(0, 128, 128, 0.705) solid;
+  background-color: teal;
+  font-size: 1.1em;
+  color: white;
+  cursor: pointer;
+}
