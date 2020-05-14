@@ -94,12 +94,12 @@ function login() {
         <form class="form login-form" action="/log-in" method="POST">
             <fieldset>
                 <legend>Login Form</legend>
-                <label for="email">Email: 
-                    <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
+                <label for="email">
+                  <input type="email" id="email" name="email" placeholder="Email" aria-label="email" required>
                 </label>
 
-                <label for="password">Password: 
-                    <input type="password" id="password" name="password" placeholder="password123" required> 
+                <label for="password">
+                  <input type="password" id="password" name="password" placeholder="Password" aria-label="password" required> 
                 </label>
 
                <button class="submit-btn" type="submit">Login now!</button>
@@ -129,15 +129,15 @@ function signUp() {
         <form class="form signup-form" action="/sign-up" method="POST">
             <fieldset>
                 <legend>SignUp Form</legend>
-                <label for="username">Username: </label>
-                <input type="text" id="username" name="username" placeholder="Username123" required>
-
-                <label for="email">Email: </label>
-                <input type="email" id="email" name="email" placeholder="hello@gmail.com?" required>
-
-                <label for="password">Password: </label>
-                <input type="password" id="password" name="password" placeholder="password123" required> 
-
+                <label for="username">
+                  <input type="text" id="username" name="username" placeholder="Username" aria-label="username" required>
+                </label>
+                <label for="email">
+                  <input type="email" id="email" name="email" placeholder="Email" aria-label="email" required>
+                </label>
+                <label for="password">
+                  <input type="password" id="password" name="password" placeholder="Password" aria-label="password" required> 
+                </label>
                 <button class="submit-btn" type="submit">Signup Now!</button>
             </fieldset>
         </form>

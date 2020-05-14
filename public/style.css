@@ -18,7 +18,11 @@ main {
 /* ------------------------- nav-links styling --------------------------- */
 
 .nav_links {
-  margin: 2em 0.5em;
+  margin: 1.5em 0.5em;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0px 5px 18px 0px rgba(176, 176, 176, 1);
 }
 
 .nav_links_a {
@@ -28,12 +32,10 @@ main {
   color: rgb(40, 177, 177);
   font-weight: bold;
   font-size: 1.5em;
-  box-shadow: 0px 0px 10px 0px rgba(176, 176, 176, 1);
-  border-radius: 1em;
 }
 
 .nav_links_a:hover {
-  box-shadow: inset 0px 0px 4px 0px rgba(176, 176, 176, 1);
+  color: black;
 }
 
 /* ------------------------- form styling --------------------------- */
@@ -65,12 +67,21 @@ fieldset {
 }
 
 .form .submit-btn {
-  margin: 2em;
+  margin: 2.5em 0;
   padding: 0.4em 1em;
+  box-sizing: border-box;
+  width: 100%;
   border-radius: 2em;
   border: rgba(0, 128, 128, 0.705) solid;
   background-color: teal;
-  font-size: 1.1em;
   color: white;
+  font-weight: 600;
   cursor: pointer;
+}
+
+.form .submit-btn:hover {
+  color: teal;
+  background-color: white;
+  border: white solid;
+  transition: 0.3s;
 }
