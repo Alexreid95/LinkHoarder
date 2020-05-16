@@ -29,6 +29,12 @@ function getLogoutHandler(req, res) {
 	res.redirect("/");
 }
 
+function getSignUpSuccessHandler(req, res) {
+	const username = req.cookies.userName;
+	const signUpSuccessHtml = templates.signUpSuccess(username);
+	res.send(signUpSuccessHtml);
+}
+
 function postLoginHandler(req, res, next) {
 	if (req.body.email === undefined || req.body.password === undefined) {
 		const errorMessage = new Error(
@@ -71,7 +77,6 @@ function postLoginHandler(req, res, next) {
 		.catch(next);
 }
 
-// Posts
 function postSignUpHandler(req, res, next) {
 	if (
 		req.body.username === undefined ||
@@ -121,7 +126,7 @@ function postSignUpHandler(req, res, next) {
 						maxAge: 6000000,
 					});
 
-					res.redirect("/");
+					res.redirect("/sign-up-success");
 				})
 				.catch(next);
 		})
@@ -133,6 +138,7 @@ module.exports = {
 	getLoginHandler,
 	getSignUpHandler,
 	getLogoutHandler,
+	getSignUpSuccessHandler,
 	postLoginHandler,
 	postSignUpHandler,
 };

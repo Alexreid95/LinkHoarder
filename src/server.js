@@ -10,6 +10,7 @@ const server = express();
 
 // Enabled for all routes
 server.use(express.urlencoded());
+server.use(express.json());
 server.use(cookieParser());
 server.use(express.static("./public"));
 
@@ -23,6 +24,7 @@ server.get("/", genericHandlers.homeHandler);
 server.get("/log-in", userHandlers.getLoginHandler);
 server.get("/sign-up", userHandlers.getSignUpHandler);
 server.get("/log-out", userHandlers.getLogoutHandler);
+server.get("/sign-up-success", userHandlers.getSignUpSuccessHandler);
 
 // Parses the request body to receive the user's submitted info
 server.post("/log-in", userHandlers.postLoginHandler);
