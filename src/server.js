@@ -10,7 +10,7 @@ const server = express();
 
 // Enabled for all routes
 server.use(express.urlencoded());
-server.use(express.json());
+// server.use(express.json());
 server.use(cookieParser());
 server.use(express.static("./public"));
 
@@ -18,6 +18,7 @@ server.use(express.static("./public"));
 // ------- Generic handlers -------
 // Renders template html
 server.get("/", genericHandlers.homeHandler);
+// server.get("default", genericHandlers.missingHandler);
 
 // ------- User handlers -------
 // Renders template html

@@ -1,6 +1,7 @@
 /* ------------------------- generic styling --------------------------- */
 
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +19,8 @@ main {
 /* ------------------------- nav-links styling --------------------------- */
 
 .nav_links {
-  margin: 1.5em 0.5em;
+  margin: 0;
+  margin-bottom: 1em;
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
