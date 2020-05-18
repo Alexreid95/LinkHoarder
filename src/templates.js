@@ -9,8 +9,8 @@ function sharedLayout(headerContent, navContent, mainContent) {
             <title>Link Hoarder</title>
         </head>
         <body>
-            ${headerContent}
             ${navContent}
+            ${headerContent}
             ${mainContent}
             <footer></footer>
         </body>
@@ -74,6 +74,32 @@ function home(username) {
 			homeMainContentOut
 		);
 	}
+}
+
+function missing() {
+	const missingHeaderContent = /*html*/ `
+    <header> 
+        <h1>Missing Page</h1>
+    </header>
+    `;
+
+	const missingNavContent = /*html*/ `
+    <nav class="nav_links">
+        <a href="/" class="nav_links_a" aria-label="home">Home</a>
+    </nav>
+    `;
+
+	const missingMainContent = /*html*/ `
+    <main class="home-main">
+        <h3>Error 404, Cant find page</h3>
+    </main>
+    `;
+
+	return sharedLayout(
+		missingHeaderContent,
+		missingNavContent,
+		missingMainContent
+	);
 }
 
 function login() {
@@ -180,6 +206,7 @@ function signUpSuccess(username) {
 
 module.exports = {
 	home,
+	missing,
 	login,
 	signUp,
 	signUpSuccess,
