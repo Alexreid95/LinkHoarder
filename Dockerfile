@@ -13,4 +13,4 @@ RUN npm install
 # copy everything else from our project into the docker image, not including the files in the docker ignore
 COPY . /code
 # run node server.js
-CMD ["node", "server.js"]
+CMD ["node", "src/server.js"]
